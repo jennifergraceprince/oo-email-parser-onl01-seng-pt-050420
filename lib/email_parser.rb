@@ -4,23 +4,14 @@
 # or whitespace (' ').
 
 class EmailParser
-  attr_accessor :emails 
+attr_accessor :emails
 
-  def initialize(emails)
-    @emails = emails
-  end 
-
-  def parse
-    puts splitEmail = emails.split.collect {|address| address.split(',')} 
-    returnArr = splitEmail.flatten.uniq
-    returnArr
-end
+def initialize(email)
+  @emails = email
 end
 
-emails1 = "asasdfd@qw.com, pefasdfr@er.org, Zaza@sugar.net"
-parser1 = EmailParser.new(emails1)
-parser1.parse 
+def parse
+  emails.delete(',').split.uniq
+end
 
-emails2 = "asd@qw.com per@er.org per@er.org Zaza@sugar.net"
-parser2 = EmailParser.new(emails2)
-parser2.parse
+end 
